@@ -1,0 +1,219 @@
+/* ============================================================
+   ANIMATION.CSS — Keyframes & Motion
+   Graduation Portfolio: Nguyễn Thị Thanh Vi
+   ============================================================ */
+
+/* ─── Entrance Keyframes ───────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ─── Hero — image slide right→ visible ────────────────────── */
+.hero-image-anim {
+  animation: heroImageSlide 1.6s var(--ease-out-expo) both;
+  animation-delay: 0.4s;
+}
+
+@keyframes heroImageSlide {
+  from { opacity: 0; transform: translateX(60px) scale(1.04); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+/* ─── Hero text — staggered fade left ──────────────────────── */
+.hero-text-anim-1 { animation: fadeInLeft 1s var(--ease-out-expo) both; animation-delay: 0.6s; }
+.hero-text-anim-2 { animation: fadeInLeft 1s var(--ease-out-expo) both; animation-delay: 0.75s; }
+.hero-text-anim-3 { animation: fadeInLeft 1s var(--ease-out-expo) both; animation-delay: 0.9s; }
+.hero-text-anim-4 { animation: fadeInLeft 1s var(--ease-out-expo) both; animation-delay: 1.05s; }
+.hero-text-anim-5 { animation: fadeInLeft 1s var(--ease-out-expo) both; animation-delay: 1.2s; }
+.hero-text-anim-6 { animation: fadeInLeft 1s var(--ease-out-expo) both; animation-delay: 1.35s; }
+
+/* ─── Loading bar animate ───────────────────────────────────── */
+@keyframes loadingFadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-20px); pointer-events: none; }
+}
+
+.loading-exit {
+  animation: loadingFadeOut 0.8s var(--ease-out-expo) both;
+}
+
+/* ─── Seal spin (loading) ───────────────────────────────────── */
+@keyframes sealSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.loading-seal::after {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: sealSpin 3s linear infinite;
+  transform-origin: 2px 54px;
+}
+
+/* ─── Ken Burns effect ──────────────────────────────────────── */
+@keyframes kenBurns {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+.ken-burns {
+  animation: kenBurns 12s ease-in-out alternate infinite;
+}
+
+/* ─── Stamp entrance ────────────────────────────────────────── */
+@keyframes stampBang {
+  0%   { transform: rotate(-15deg) scale(2); opacity: 0; }
+  60%  { transform: rotate(-15deg) scale(0.9); opacity: 1; }
+  80%  { transform: rotate(-15deg) scale(1.05); }
+  100% { transform: rotate(-15deg) scale(1); opacity: 1; }
+}
+
+.stamp.bang {
+  animation: stampBang 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* ─── Scroll fade-in (used by IntersectionObserver) ────────── */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal.delay-1 { transition-delay: 0.1s; }
+.scroll-reveal.delay-2 { transition-delay: 0.2s; }
+.scroll-reveal.delay-3 { transition-delay: 0.3s; }
+.scroll-reveal.delay-4 { transition-delay: 0.4s; }
+
+/* ─── Parallax layers ───────────────────────────────────────── */
+.parallax-slow  { will-change: transform; }
+.parallax-med   { will-change: transform; }
+.parallax-fast  { will-change: transform; }
+
+/* ─── Hover lift ────────────────────────────────────────────── */
+.hover-lift {
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.4);
+}
+
+/* ─── Shimmer sweep ─────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--gold) 0%,
+    var(--gold-light) 30%,
+    #fff 50%,
+    var(--gold-light) 70%,
+    var(--gold) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ─── Floating animation (particles) ───────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* ─── Gold glow pulse ───────────────────────────────────────── */
+@keyframes goldGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(201,162,39,0.15); }
+  50%       { box-shadow: 0 0 40px rgba(201,162,39,0.3); }
+}
+
+.glow-pulse {
+  animation: goldGlow 3s ease-in-out infinite;
+}
+
+/* ─── Typewriter (JS-driven, CSS assists) ────────────────────── */
+.typewriter-text {
+  white-space: pre-wrap;
+}
+
+/* ─── Page transition overlay ───────────────────────────────── */
+#page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--gold);
+  z-index: 9998;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+/* ─── Number counter glow ───────────────────────────────────── */
+.counter-value {
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+/* ─── Grain texture overlay ─────────────────────────────────── */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ─── Gold divider line animated ─────────────────────────────── */
+@keyframes lineDraw {
+  from { width: 0; }
+  to   { width: 60px; }
+}
+
+.divider-animate {
+  animation: lineDraw 1s var(--ease-out-expo) both;
+}
+
+/* ─── Basis card stagger ────────────────────────────────────── */
+.basis-card.scroll-reveal:nth-child(1) { transition-delay: 0.05s; }
+.basis-card.scroll-reveal:nth-child(2) { transition-delay: 0.15s; }
+.basis-card.scroll-reveal:nth-child(3) { transition-delay: 0.25s; }
+.basis-card.scroll-reveal:nth-child(4) { transition-delay: 0.35s; }

@@ -1,0 +1,300 @@
+/* ============================================================
+   RESPONSIVE.CSS — Mobile & Tablet Breakpoints
+   Graduation Portfolio: Nguyễn Thị Thanh Vi
+   ============================================================ */
+
+/* ─── Tablet: ≤ 1024px ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+  :root {
+    --section-pad-y: clamp(60px, 10vw, 120px);
+    --content-pad: clamp(20px, 4vw, 60px);
+  }
+
+  /* Navbar */
+  .nav-links {
+    gap: 24px;
+  }
+
+  /* Hero */
+  #hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Legal Basis grid → 2 cols */
+  .basis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Summary */
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-copy {
+    text-align: center;
+  }
+
+  /* Graduation layout */
+  .grad-layout {
+    max-width: 700px;
+    gap: 24px;
+  }
+}
+
+/* ─── Mobile Landscape / Small Tablet: ≤ 768px ─────────────── */
+@media (max-width: 768px) {
+  :root {
+    --section-pad-y: 80px;
+    --content-pad: 20px;
+  }
+
+  /* Hide cursor follower on touch */
+  #cursor,
+  #cursor-follower {
+    display: none;
+  }
+
+  /* Navbar */
+  #navbar {
+    padding: 16px var(--content-pad);
+  }
+
+  .nav-links {
+    display: none; /* Hidden on mobile */
+  }
+
+  /* Hero — stack vertically */
+  #hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 50vh;
+    min-height: auto;
+  }
+
+  .hero-left {
+    padding: 100px 24px 40px;
+    order: 1;
+  }
+
+  .hero-right {
+    order: 2;
+    height: 50vh;
+  }
+
+  .hero-watermark {
+    font-size: 28vw;
+    bottom: auto;
+    top: 30%;
+    left: -4%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Summary */
+  .summary-meta {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Decision */
+  .decision-paper {
+    padding: 32px 24px;
+  }
+
+  .article {
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+  }
+
+  .decision-footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .stamp-wrap {
+    margin-inline: auto;
+  }
+
+  /* Legal Basis → 1 col */
+  .basis-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Graduation → stack */
+  .grad-layout {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .grad-photo-wrap:last-child {
+    margin-top: 0;
+  }
+
+  /* Gallery → 2 cols */
+  .gallery-masonry {
+    columns: 2;
+    column-gap: 10px;
+  }
+
+  .gallery-item {
+    margin-bottom: 10px;
+  }
+
+  /* Wish cards */
+  .wish-card {
+    width: 300px;
+    padding: 28px;
+  }
+
+  /* Closing */
+  .closing-letter {
+    padding: 28px 24px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    gap: 24px;
+    padding: 40px 20px;
+  }
+
+  /* Lightbox navigation */
+  #lightbox-prev { left: 8px; }
+  #lightbox-next { right: 8px; }
+}
+
+/* ─── Small Mobile: ≤ 480px ────────────────────────────────── */
+@media (max-width: 480px) {
+  :root {
+    --section-pad-y: 64px;
+  }
+
+  .t-display {
+    font-size: 48px;
+  }
+
+  .t-headline {
+    font-size: 32px;
+  }
+
+  /* Gallery → 1 col fallback for very small screens */
+  .gallery-masonry {
+    columns: 2;
+  }
+
+  /* Decision paper */
+  .decision-number {
+    font-size: 20px;
+  }
+
+  /* Basis card full width */
+  .basis-card {
+    padding: 28px 20px;
+  }
+
+  /* Wish cards */
+  .wish-card {
+    width: 280px;
+    padding: 24px;
+  }
+
+  .wishes-track-wrap::before,
+  .wishes-track-wrap::after {
+    width: 60px;
+  }
+
+  /* Hero name slightly smaller */
+  .hero-name {
+    font-size: 36px;
+  }
+}
+
+/* ─── Large Desktop: ≥ 1440px ──────────────────────────────── */
+@media (min-width: 1440px) {
+  :root {
+    --content-max: 1360px;
+  }
+
+  .gallery-masonry {
+    columns: 5;
+  }
+}
+
+/* ─── Reduced Motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .ken-burns {
+    animation: none;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .stamp {
+    transform: rotate(-15deg) scale(1);
+  }
+}
+
+/* ─── Print ─────────────────────────────────────────────────── */
+@media print {
+  #loading-screen,
+  #cursor,
+  #cursor-follower,
+  #mouse-glow,
+  #particles-canvas,
+  #scroll-progress,
+  #navbar,
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  #hero {
+    min-height: auto;
+    page-break-after: always;
+  }
+}
+
+/* ─── Gallery responsive columns ───────────────────────────── */
+@media (min-width: 1200px) {
+  .gallery-masonry { columns: 4; }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .gallery-masonry { columns: 3; }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .gallery-masonry { columns: 2; }
+}
+
+@media (max-width: 599px) {
+  .gallery-masonry { columns: 2; }
+}
