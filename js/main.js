@@ -160,17 +160,29 @@ navAs.forEach(a => {
   });
 });
 
-// ─── ACTIVE NAV LINK ──────────────────────────────
+// ─── ACTIVE NAV LINK & ANCHOR SCROLL ──────────────
 const path = window.location.pathname;
 let currentFile = path.substring(path.lastIndexOf('/') + 1);
 if (!currentFile || currentFile === '') currentFile = 'index.html';
 
 navAs.forEach(link => {
   const href = link.getAttribute('href');
-  if (href === currentFile) {
-    link.classList.add('active');
+  
+  if (href === currentFile || (currentFile === 'index.html' && (href === 'index.html' || href === '#anh-tot-nghiep'))) {
+    if (href === currentFile) link.classList.add('active');
   } else {
     link.classList.remove('active');
+  }
+
+  // Smooth scroll for anchor links on same page
+  if (href && href.startsWith('#')) {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetEl = document.querySelector(href);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   }
 });
 

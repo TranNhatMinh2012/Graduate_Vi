@@ -21,9 +21,8 @@
       <a href="index.html" class="nav-a">Trang chủ</a>
       <a href="quyet-dinh.html" class="nav-a">Quyết định</a>
       <a href="can-cu.html" class="nav-a">Bằng chứng</a>
-      <a href="anh-tot-nghiep.html" class="nav-a">Ảnh lễ</a>
       <a href="ki-niem.html" class="nav-a">Kỷ niệm</a>
-      <a href="loi-chuc.html" class="nav-a">Lời chúc</a>
+      <a href="loi-chuc.html" class="nav-a active">Lời chúc</a>
       <a href="thu-gui.html" class="nav-a">Thư gửi Vi</a>
     </div>
     <div class="nav-toggle">
@@ -35,16 +34,52 @@
 
   <section id="loi-chuc" class="section-pad">
     <div class="container text-center">
-      <span class="eyebrow">Lời chúc từ bạn bè</span>
-      <h1 class="headline">Những Điều Muốn Nói</h1>
+      <span class="eyebrow">WITNESS STATEMENTS · BẢN KHAI TỰ NGUYỆN</span>
+      <h1 class="headline">Hồ Sơ Tuyên Bố Tình Bạn</h1>
       <div class="divider divider-c"></div>
-      <p class="body-text" style="max-width: 600px; margin: 0 auto;">Những dòng tâm tình ấm áp được gửi gắm từ tận đáy lòng, chúc cho hành trình mới của Vi trải đầy hoa hồng và thành công rực rỡ.</p>
+      <p class="body-text" style="max-width: 650px; margin: 0 auto 28px;">Mỗi lời chúc là một tài liệu pháp lý đã được niêm phong. Hãy nhấn vào từng con dấu sáp để <strong>bóc niêm phong</strong> và đọc bản khai!</p>
+
+      <!-- Game Status Bar -->
+      <div id="wishes-game-bar" class="wishes-game-bar glass reveal">
+        <div class="game-stat-info">
+          <span class="game-stat-label">HỒ SƠ NIÊM PHONG:</span>
+          <span id="unseal-counter" class="game-stat-count">0 / 0 Đã mở</span>
+        </div>
+        <div class="game-progress-track">
+          <div id="game-progress-fill" class="game-progress-fill" style="width: 0%;"></div>
+        </div>
+        <button id="unseal-all-btn" class="btn btn-gold btn-sm">🔓 Bóc Tất Cả Hồ Sơ</button>
+      </div>
       
       <div id="wishes-grid" class="wishes-grid">
         <!-- JS will populate -->
       </div>
     </div>
   </section>
+
+  <!-- Document Inspection Modal -->
+  <div id="doc-modal" class="doc-modal">
+    <div class="doc-modal-content glass">
+      <button id="doc-modal-close" class="doc-modal-close">✕</button>
+      <div class="doc-modal-header">
+        <span id="modal-doc-id" class="doc-id">DOC-2026-VI-000</span>
+        <span id="modal-doc-status" class="doc-status-badge">VERIFIED</span>
+      </div>
+      <div id="modal-doc-type" class="doc-type-title">AFFIDAVIT OF FRIENDSHIP</div>
+      <div id="modal-doc-sub" class="doc-sub-label">Bản Khai Tự Nguyện Tình Bạn</div>
+      <div class="doc-modal-divider"></div>
+      <p id="modal-doc-msg" class="doc-modal-text"></p>
+      <div class="doc-modal-footer">
+        <div>
+          <span class="signer-title">NGƯỜI TUYÊN BỐ</span>
+          <div id="modal-doc-signer" class="signer-name"></div>
+        </div>
+        <div class="modal-stamp-seal">
+          <span>AUTHENTICATED</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer id="footer">
     <div class="footer-seal">Vi</div>

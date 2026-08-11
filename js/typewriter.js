@@ -2,15 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const contentEl = document.getElementById('letter-content');
   if (!contentEl) return;
   
-  const letterText = `Vi ơi,
+  const letterText = `Mom Vi ơi,
 
 Bốn năm đã trôi qua như một giấc mơ đẹp — đầy những trang sách luật, những buổi sáng cà phê vội vàng trước giờ học, những đêm deadline căng thẳng và những khoảnh khắc vỡ òa vui sướng không thể nào quên.
 
-Hôm nay, khi tấm bằng Cử nhân Luật Kinh tế đặt vào tay em, đó không chỉ là thành quả của trí tuệ — đó là minh chứng cho sự kiên nhẫn, lòng dũng cảm và trái tim luôn hướng về phía trước dù bao nhiêu lần vấp ngã.
+Hôm nay, khi tấm bằng Cử nhân Luật đặt vào tay mom, đó không chỉ là thành quả của trí tuệ — đó là minh chứng cho sự kiên nhẫn, lòng dũng cảm và trái tim luôn hướng về phía trước dù bao nhiêu lần vấp ngã.
 
-Nhóm 7 Nụ luôn ở đây, luôn tự hào về em. Hành trình phía trước sẽ không phải lúc nào cũng bằng phẳng — nhưng hãy nhớ rằng em đã làm được điều mà nhiều người chỉ dám mơ ước.
+Nhóm 7 Nụ luôn ở đây, luôn tự hào về mom. Hành trình phía trước sẽ không phải lúc nào cũng bằng phẳng — nhưng hãy nhớ rằng mom đã làm được điều mà nhiều người chỉ dám mơ ước.
 
-Chặng đường mới đang chờ. Và em hoàn toàn sẵn sàng.
+Chặng đường mới đang chờ. Và mom hoàn toàn sẵn sàng.
 
 Với tất cả tình yêu và sự tự hào,`;
 
